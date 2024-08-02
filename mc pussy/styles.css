@@ -1,0 +1,158 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background-image {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('images/bancone.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bottom-right-image {
+    position: absolute;
+    bottom: 0px;
+    right: 70px;
+    width: 350px;
+    height: auto;
+    z-index: 1;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+}
+
+.modal.show {
+    display: block; /* Show the modal */
+    opacity: 1; /* Fade in effect */
+    animation: fadeInUp 0.5s ease-out; /* Animation effect */
+}
+
+/* Keyframes for fade-in and slide-up effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from 20px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out; /* Animation effect for content */
+}
+
+/* Keyframes for sliding in effect */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px); /* Start from 30px above */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* Move to original position */
+        opacity: 1; /* Fade in */
+    }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Menu styles */
+.menu {
+    position: fixed; /* Stay in place */
+    top: 60%; /* Position below the modal */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 2; /* Ensure it appears above other elements */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between elements */
+    animation: slideUp 0.5s ease-out; /* Animation effect */
+}
+
+/* Keyframes for sliding up effect */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Start from 20px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+.menu-title {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-items {
+    display: flex;
+    gap: 20px; /* Space between icons */
+}
+
+.menu-icon {
+    display: block;
+    width: 40px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+}
+
+.menu-icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Add hover effect to icons */
+.menu-icon:hover img {
+    opacity: 0.8;
+}
